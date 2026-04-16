@@ -5,147 +5,195 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Melania Uribe - Resume</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-  body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    background: linear-gradient(135deg, #0f172a, #020617);
-    color: #e2e8f0;
-  }
+
+/* FIX: Prevent layout breaking */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #e2e8f0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #111827;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);} 
+  to {opacity: 1; transform: translateY(0);} 
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 14px;
+  color: #38bdf8;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cbd5f5;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1f2937;
+  padding-bottom: 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #38bdf8;
+  transition: transform 0.3s;
+}
+
+.profile img:hover {
+  transform: scale(1.05);
+}
+
+.contact {
+  font-size: 13px;
+  color: #94a3b8;
+  text-align: right;
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.title {
+  font-weight: 600;
+  color: #38bdf8;
+  margin-top: 10px;
+}
+
+.section {
+  margin-top: 25px;
+  animation: fadeIn 1.2s ease-in;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+li:hover {
+  transform: translateX(4px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.badge {
+  display: inline-block;
+  background: #1e293b;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin: 4px;
+  font-size: 12px;
+  transition: all 0.3s;
+}
+
+.badge:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.highlight {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* ✅ RESPONSIVE FIX */
+@media (max-width: 768px) {
 
   .container {
-    max-width: 1000px;
-    margin: 40px auto;
-    background: #111827;
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    animation: fadeIn 1s ease-in;
-  }
-
-  @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);} 
-    to {opacity: 1; transform: translateY(0);} 
-  }
-
-  h1 {
-    font-size: 32px;
-    margin-bottom: 5px;
-  }
-
-  h2 {
-    font-size: 14px;
-    color: #38bdf8;
-    letter-spacing: 2px;
-    margin-top: 30px;
-  }
-
-  h3 {
-    font-size: 18px;
-    margin: 10px 0 5px;
-  }
-
-  p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #cbd5f5;
+    padding: 20px;
+    margin: 10px;
   }
 
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #1f2937;
-    padding-bottom: 20px;
-  }
-
-  .profile {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .profile img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #38bdf8;
-    transition: transform 0.3s;
-  }
-
-  .profile img:hover {
-    transform: scale(1.05);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
   }
 
   .contact {
-    font-size: 13px;
-    color: #94a3b8;
-    text-align: right;
-  }
-
-  a {
-    color: #38bdf8;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  .title {
-    font-weight: 600;
-    color: #38bdf8;
-    margin-top: 10px;
-  }
-
-  .section {
-    margin-top: 25px;
-    animation: fadeIn 1.2s ease-in;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
-
-  li {
-    margin-bottom: 8px;
-    font-size: 14px;
-    transition: transform 0.2s;
-  }
-
-  li:hover {
-    transform: translateX(4px);
+    text-align: left;
   }
 
   .grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  p, li {
+    font-size: 13px;
   }
 
   .badge {
-    display: inline-block;
-    background: #1e293b;
-    padding: 6px 10px;
-    border-radius: 8px;
-    margin: 4px;
-    font-size: 12px;
-    transition: all 0.3s;
+    font-size: 11px;
   }
 
-  .badge:hover {
-    background: #38bdf8;
-    color: #0f172a;
-  }
-
-  .highlight {
-    color: #38bdf8;
-    font-weight: 600;
-  }
+}
 
 </style>
 </head>
+
 <body>
 
 <div class="container">
